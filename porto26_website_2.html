@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Porto 2026 — National Touch Rugby Tournament</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script>
+/* ============================================================
+   SITE_DATA — ALL EDITABLE CONTENT LIVES HERE
+   To update content: edit values below, save, refresh browser.
+   To update via Edit Mode: toggle Edit Mode on page, click any
+   text, edit inline, click "Export Data", paste block back here.
+   ============================================================ */
+const SITE_DATA = {
+  meta: {
+    title: "Porto 2026 National Touch Rugby Tournament",
+    description: "Malaysia's premier youth touch rugby tournament. 12 & 13 September 2026 at Arena Sukan Kuala Lumpur.",
+  },
+  nav: {
+    brand: "PORTO '26",
+    links: ["About","Categories","Schedule","Sponsors","Venue","FAQ"],
+    cta: "Register Now"
+  },
+  hero: {
+    eyebrow: "Blitz Rugby Club Presents",
+    title: "PORTO",
+    titleAccent: "'26",
+    subtitle: "National Touch Rugby Tournament",
+    date: "12 & 13 September 2026",
+    venue: "Arena Sukan Kuala Lumpur",
+    cta1: "Register Your Team",
+    cta2: "Become a Sponsor",
+    countdownTarget: "2026-09-12T08:00:00"
+  },
+  stats: [
+    { num: "2nd",  label: "Edition" },
+    { num: "30+",  label: "Teams Expected" },
+    { num: "2",    label: "Days of Action" },
+    { num: "64",   label: "Club Trophies" },
+    { num: "100+", label: "Youth Inspired" }
+  ],
+  about: {
+    label: "About the Tournament",
+    heading: "WHERE COMMUNITY",
+    headingAccent: "MEETS COMPETITION",
+    paragraphs: [
+      "Now in its 2nd edition, the Porto 2026 National Touch Rugby Tournament is the biggest grassroots touch rugby gathering in Malaysia — bigger, bolder, and more inclusive than ever.",
+      "Organised by Blitz Rugby Club, this tournament brings together boys and girls teams from across the country to celebrate the sport they love. From first-timers finding their feet to seasoned competitors chasing gold — everyone belongs here."
+    ],
+    highlights: [
+      { title: "Brand Association", text: "Align with a positive, empowering grassroots event celebrating youth, diversity and community spirit." },
+      { title: "Community Impact", text: "Every match, every team, every moment contributes to a growing, thriving sporting community in Malaysia." },
+      { title: "Youth Empowerment", text: "Supporting the next generation of Malaysian athletes through sport, teamwork, and resilience." }
+    ],
+    eventDetails: {
+      date: "12 & 13 September 2026",
+      time: "8:00 AM – 5:00 PM",
+      venue: "Arena Sukan Kuala Lumpur",
+      edition: "2nd Annual",
+      organiser: "Blitz Rugby Club",
+      format: "Touch Rugby — 6v6"
+    }
+  },
+  categories: [
+    { age: "U10", name: "Under 10", gender: "Girls", genderTag: "Girls", born: "Born 2016 or later", desc: "Our youngest stars taking their first steps in touch rugby. All about fun, learning and making new friends.", color: "#1DBFAB", illustrationKey: "girlU10" },
+    { age: "U12", name: "Under 12", gender: "Boys & Girls", genderTag: "Mixed", born: "Born 2014 or later", desc: "Building skills, teamwork and a love for the game. The foundation years where champions are made.", color: "#1DBFAB", illustrationKey: "girlU12" },
+    { age: "U16", name: "Under 16", gender: "Girls", genderTag: "Girls", born: "Born 2010 or later", desc: "Competitive, fast-paced and thrilling — this is where future national stars step into the spotlight.", color: "#1DBFAB", illustrationKey: "girlU16" },
+    { age: "U12B", name: "Under 12 Boys", gender: "Boys", genderTag: "Boys", born: "Born 2014 or later", desc: "Speed, skill and spirit. Boys U12 brings the energy and intensity that makes touch rugby unmissable.", color: "#1DBFAB", illustrationKey: "boyU12" }
+  ],
+  schedule: {
+    day1: {
+      label: "Day 1 — 12 September",
+      items: [
+        { time: "8:00 AM",  event: "Registration & Team Check-In", sub: "All teams report to registration desk", badge: "All Teams" },
+        { time: "8:30 AM",  event: "Opening Ceremony", sub: "Welcome address & official tournament flag-off", badge: "Main Field" },
+        { time: "9:00 AM",  event: "Group Stage — U10 & U12 Girls", sub: "Round-robin pool play begins", badge: "Pools" },
+        { time: "11:00 AM", event: "Group Stage — U12 Boys", sub: "Pool matches across all fields", badge: "Pools" },
+        { time: "12:30 PM", event: "Lunch Break", sub: "Food vendors and refreshments on site", badge: "Break" },
+        { time: "1:30 PM",  event: "Group Stage — U16 Girls", sub: "Afternoon pool play sessions", badge: "Pools" },
+        { time: "3:30 PM",  event: "Pool Play Continues", sub: "Remaining group stage matches", badge: "Pools" },
+        { time: "5:00 PM",  event: "End of Day 1", sub: "Pool standings finalised overnight", badge: "Close" }
+      ]
+    },
+    day2: {
+      label: "Day 2 — 13 September",
+      items: [
+        { time: "8:00 AM",  event: "Warm-Up & Quarter Finals", sub: "Top teams advance to knockout rounds", badge: "All" },
+        { time: "10:00 AM", event: "Semi Finals — All Categories", sub: "The battle for the final begins", badge: "Knockouts" },
+        { time: "12:00 PM", event: "Plate & Bowl Finals", sub: "Secondary competition finals across all categories", badge: "Finals" },
+        { time: "12:30 PM", event: "Lunch Break", sub: "Final preparations for champions", badge: "Break" },
+        { time: "2:00 PM",  event: "Grand Finals — All Categories", sub: "Champions crowned across all age groups", badge: "Finals" },
+        { time: "4:00 PM",  event: "Closing Ceremony & Prize Giving", sub: "Awards, trophies & celebrating our champions", badge: "Ceremony" },
+        { time: "5:00 PM",  event: "Tournament Close", sub: "See you at Porto '27!", badge: "Close" }
+      ]
+    }
+  },
+  sponsors: {
+    intro: "Join us in creating lasting memories, fostering young talent, and shaping the future of grassroots touch rugby in Malaysia.",
+    packages: [
+      { tier: "Diamond", amount: "RM25,000", slots: 1, pool: "RM25,000", colorClass: "diamond", benefits: ["Event Title Naming Rights","Logo on Challenge Cup — all categories","Logo on Medals & Medal Lanyards","Billboard on Main Roads KL","Beach Flags 4L + 4M","Tournament A-Boards 4 pcs","Mock cheque all categories","All printed collateral"] },
+      { tier: "Emerald", amount: "RM15,000", slots: 4, pool: "RM60,000", colorClass: "emerald", featured: true, benefits: ["Name on Challenge Cup","Logo on Medals","Referee Official Jersey","Beach Flags 4M","A-Boards combined logo","Tournament Backdrop","Committee & Volunteer Shirts"] },
+      { tier: "Ruby",    amount: "RM10,000", slots: 6, pool: "RM60,000", colorClass: "ruby",    benefits: ["Logo on Medals","Medal Lanyards","e-Certificates","Tournament Banners","Participant T-shirts","Non-Woven Bags"] },
+      { tier: "Sapphire",amount: "RM5,000",  slots: 8, pool: "RM40,000", colorClass: "sapphire",benefits: ["e-Certificates","Tournament Banners","Non-Woven Bags","Media Advertising","A-Boards combined logo"] },
+      { tier: "Amber",   amount: "RM2,500",  slots: 10,pool: "RM25,000", colorClass: "amber",   benefits: ["e-Certificates","Non-Woven Bags","Media Advertising","Beach Flags combined","A-Boards combined logo"] }
+    ],
+    current: []
+  },
+  venue: {
+    label: "Venue & Travel",
+    heading: "ARENA SUKAN",
+    headingAccent: "KL",
+    desc: "Arena Sukan Kuala Lumpur is one of Malaysia's premier multi-sport facilities, providing a world-class setting for Porto 2026. Centrally located with excellent public transport links and ample parking.",
+    name: "Arena Sukan Kuala Lumpur",
+    address: "Jalan Cheras, Kuala Lumpur",
+    hours: "8:00 AM – 5:00 PM both days",
+    facilities: "Parking · Changing Rooms · Café · First Aid",
+    lrt: "[PLACEHOLDER — Nearest LRT station to be confirmed]",
+    mapUrl: "https://maps.google.com?q=Arena+Sukan+Kuala+Lumpur"
+  },
+  faq: [
+    { q: "Who can participate in Porto 2026?", a: "Porto 2026 is open to boys and girls teams across all age categories — U10 Girls, U12 Girls, U12 Boys, and U16 Girls. Teams from any school, club, or community group across Malaysia are welcome. No previous tournament experience needed!" },
+    { q: "What are the team sizes?", a: "Touch rugby is played 6v6. Each team should register a squad of 8–12 players to allow for substitutions. [PLACEHOLDER — Exact squad size to be confirmed in tournament brief.]" },
+    { q: "What is touch rugby? Is it different from regular rugby?", a: "Touch rugby is a non-contact version of rugby where a 'touch' replaces a tackle. It's fast, fun, and perfect for all ages. No tackling, no scrums, no lineouts — just running, passing and teamwork. It's one of the fastest growing sports in Malaysia!" },
+    { q: "How do we register our team?", a: "Registration details and the team entry form will be published here once open. Contact our team directly to reserve your spot early. Places are limited — don't wait! [PLACEHOLDER — Registration link to be added.]" },
+    { q: "What are the registration fees?", a: "[PLACEHOLDER — Registration fees per team/category to be confirmed. Check back soon or contact us for early bird pricing.]" },
+    { q: "Are there accommodation options near the venue?", a: "Arena Sukan KL is centrally located with many hotels nearby. We recommend booking early, especially for teams travelling from outside KL. [PLACEHOLDER — Recommended accommodation list to be added.]" },
+    { q: "How can my company become a sponsor?", a: "We have five tiers — Diamond to Amber — ranging from RM2,500 to RM25,000. Each offers strong brand visibility and community goodwill. Download our sponsorship brief or contact Ameirul at +6 019-241 5387." },
+    { q: "Can I volunteer at the tournament?", a: "Yes! We love volunteers. From match officials to event crew, there's a role for everyone. Reach out via the contact section below and join the Porto '26 family." }
+  ],
+  contact: {
+    heading: "LET'S",
+    headingAccent: "TALK",
+    desc: "Whether you're registering a team, exploring sponsorship, or just want to know more — our team is here for you. Don't be a stranger.",
+    contacts: [
+      { label: "Funding & Sponsorship", value: "+6 019-241 5387", name: "Ameirul Azraie Mustadza" },
+      { label: "General Enquiries", value: "blitzrugbyclub@gmail.com", name: "Blitz Rugby Club" }
+    ]
+  },
+  /* ============================================================
+     IMAGE SLOTS — Cloudinary Setup:
+     1. Go to cloudinary.com → Sign up free
+     2. Upload image via drag-and-drop dashboard
+     3. Copy the URL → paste below
+     4. Save file & refresh. Image is live!
+     Leave as "" to show a styled teal placeholder instead.
+     ============================================================ */
+  images: {
+    logo:        "https://res.cloudinary.com/dzpcl4hq2/image/upload/v1777638059/Porto_2026_logo-removebg-preview_e3pvaz.png",   /* Porto '26 logo PNG — transparent bg recommended */
+    heroBg:      "",   /* Hero background — 1920x1080 JPG ideal */
+    aboutPhoto:  "",   /* Tournament action photo — 1200x800 JPG */
+    venuePhoto:  "",   /* Arena Sukan KL photo — 1200x800 JPG */
+    gallery:     [],   /* Porto '23 highlight photos — array of URLs */
+    sponsors: {
+      diamond:   [],   /* Diamond sponsor logo URLs */
+      emerald:   [],   /* Emerald sponsor logo URLs */
+      ruby:      [],   /* Ruby sponsor logo URLs */
+      sapphire:  [],   /* Sapphire sponsor logo URLs */
+      amber:     []    /* Amber sponsor logo URLs */
+    }
+  }
+};
+/* ============================================================
+   END OF SITE_DATA — Do not edit below this line for content.
+   All design code follows.
+   ============================================================ */
+</script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --teal:#1DBFAB;--teal-dark:#0F8A7A;--teal-light:#5DCFC3;
+  --black:#0A0A0A;--off-white:#F5F5F2;--mid:#1E1E1E;--mid2:#2A2A2A;--muted:#888;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;background:var(--black);color:var(--off-white);overflow-x:hidden}
+
+/* ---- EDIT MODE ---- */
+body.edit-mode [data-edit]{outline:2px dashed rgba(29,191,171,0.5);cursor:text;min-width:20px;display:inline-block}
+body.edit-mode [data-edit]:hover{outline-color:var(--teal);background:rgba(29,191,171,0.06)}
+body.edit-mode [data-edit]:focus{outline:2px solid var(--teal);background:rgba(29,191,171,0.08)}
+#edit-toolbar{display:none;position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.edit-btn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;padding:10px 20px;border:none;cursor:pointer;clip-path:polygon(8px 0%,100% 0%,calc(100%-8px) 100%,0% 100%);transition:all .2s}
+#btn-toggle{background:var(--mid2);color:var(--teal);border:1px solid var(--teal)}
+#btn-toggle.active{background:var(--teal);color:var(--black)}
+#btn-export{background:var(--teal);color:var(--black);display:none}
+#edit-hint{display:none;font-size:12px;color:var(--teal);text-align:right;background:rgba(0,0,0,0.8);padding:6px 12px;border:1px solid rgba(29,191,171,0.2)}
+
+/* ---- NAV ---- */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(10,10,10,0.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(29,191,171,0.12);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;letter-spacing:2px;color:var(--teal)}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(245,245,242,.75);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--teal)}
+.nav-cta{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;background:var(--teal);color:var(--black);padding:9px 22px;border:none;cursor:pointer;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:background .2s}
+.nav-cta:hover{background:var(--teal-light)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--off-white);transition:all .3s}
+.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(10,10,10,.98);border-bottom:1px solid rgba(29,191,171,.15);padding:1.5rem 2rem;z-index:499}
+.mobile-menu.open{display:block}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:1.25rem}
+.mobile-menu a{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:2px;text-transform:uppercase;color:var(--off-white);text-decoration:none}
+
+/* ---- HERO ---- */
+.hero{min-height:100vh;padding-top:60px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero-bg-img{position:absolute;inset:0;background-size:cover;background-position:center;background-color:var(--black)}
+.hero-bg-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.6) 0%,rgba(10,10,10,.5) 50%,rgba(10,10,10,.85) 100%)}
+.hero-lines{position:absolute;bottom:0;left:0;width:clamp(120px,20vw,240px);opacity:.3;pointer-events:none}
+.hero-lines-r{position:absolute;top:80px;right:0;width:clamp(100px,15vw,180px);opacity:.2;pointer-events:none;transform:scaleX(-1)}
+.hero-content{position:relative;z-index:2;max-width:860px;padding:2rem 1.5rem;width:100%}
+.hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--teal);margin-bottom:1.25rem;display:flex;align-items:center;justify-content:center;gap:14px}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';width:36px;height:1px;background:var(--teal);opacity:.6}
+.hero-logo{width:clamp(80px,12vw,120px);height:auto;margin:0 auto 1.25rem}
+.hero-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(60px,14vw,120px);line-height:.88;text-transform:uppercase;letter-spacing:-2px;color:#fff;margin-bottom:.4rem}
+.hero-title .accent{color:var(--teal)}
+.hero-subtitle{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:clamp(14px,3vw,22px);letter-spacing:5px;text-transform:uppercase;color:rgba(245,245,242,.65);margin-bottom:2rem}
+.hero-badge{display:inline-flex;align-items:center;gap:1.25rem;background:rgba(29,191,171,.08);border:1px solid rgba(29,191,171,.25);padding:12px 28px;margin-bottom:2.5rem;flex-wrap:wrap;justify-content:center;gap:.75rem}
+.hero-date-text{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(16px,3vw,22px);letter-spacing:2px;color:var(--teal)}
+.hero-sep{width:1px;height:28px;background:rgba(29,191,171,.3)}
+.hero-venue-text{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:clamp(13px,2vw,16px);letter-spacing:1px;text-transform:uppercase;color:rgba(245,245,242,.65)}
+
+/* ---- COUNTDOWN ---- */
+.countdown-wrap{margin-bottom:2.5rem}
+.countdown-label{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;opacity:.8}
+.countdown{display:flex;gap:clamp(8px,2vw,20px);justify-content:center;flex-wrap:wrap}
+.cd-unit{display:flex;flex-direction:column;align-items:center;min-width:clamp(56px,10vw,80px)}
+.cd-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(36px,7vw,64px);line-height:1;color:#fff;background:rgba(29,191,171,.08);border:1px solid rgba(29,191,171,.2);padding:8px 12px;min-width:clamp(56px,10vw,80px);text-align:center;position:relative;overflow:hidden}
+.cd-num::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(29,191,171,.04),transparent)}
+.cd-sep{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(28px,5vw,52px);color:var(--teal);opacity:.4;line-height:1;padding-top:8px}
+.cd-sub{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.cd-finished{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(18px,4vw,32px);letter-spacing:3px;color:var(--teal);text-transform:uppercase}
+
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:2px;text-transform:uppercase;background:var(--teal);color:var(--black);padding:14px 32px;border:none;cursor:pointer;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);transition:all .2s;text-decoration:none;display:inline-block}
+.btn-primary:hover{background:var(--teal-light);transform:translateY(-2px)}
+.btn-outline{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:2px;text-transform:uppercase;background:transparent;color:var(--teal);padding:13px 32px;border:1px solid var(--teal);cursor:pointer;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);transition:all .2s;text-decoration:none;display:inline-block}
+.btn-outline:hover{background:rgba(29,191,171,.1);transform:translateY(-2px)}
+.scroll-hint{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;opacity:.45;pointer-events:none}
+.scroll-hint span{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--teal)}
+.scroll-arrow{width:18px;height:18px;border-right:1px solid var(--teal);border-bottom:1px solid var(--teal);transform:rotate(45deg);animation:bob 1.6s infinite}
+@keyframes bob{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(5px)}}
+
+/* ---- STATS BAR ---- */
+.stats-bar{background:var(--teal);padding:20px 2rem}
+.stats-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-around;flex-wrap:wrap;gap:.5rem}
+.stat-item{text-align:center;padding:4px 12px}
+.stat-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(28px,5vw,40px);color:var(--black);line-height:1}
+.stat-lbl{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(0,0,0,.6)}
+
+/* ---- SECTIONS ---- */
+section{padding:80px 2rem}
+.container{max-width:1100px;margin:0 auto}
+.sec-label{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--teal);margin-bottom:.75rem}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(32px,6vw,60px);text-transform:uppercase;line-height:.95;color:#fff;margin-bottom:2rem}
+.sec-title .accent{color:var(--teal)}
+
+/* ---- ABOUT ---- */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.about-body p{font-size:15px;line-height:1.8;color:rgba(245,245,242,.7);margin-bottom:1.25rem}
+.about-body strong{color:var(--teal)}
+.highlights{display:flex;flex-direction:column;gap:.875rem;margin-top:2rem}
+.hl-item{display:flex;gap:1rem;padding:1.125rem;background:rgba(29,191,171,.05);border-left:2px solid var(--teal)}
+.hl-icon{width:30px;height:30px;flex-shrink:0;margin-top:2px}
+.hl-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:.5px;text-transform:uppercase;color:#fff;margin-bottom:3px}
+.hl-text{font-size:13px;color:rgba(245,245,242,.55);line-height:1.5}
+.event-card{background:var(--mid2);border:1px solid rgba(29,191,171,.18);padding:2rem}
+.ec-header{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid rgba(29,191,171,.18)}
+.ec-row{display:flex;justify-content:space-between;align-items:flex-start;padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.05);gap:1rem}
+.ec-label{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.ec-val{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;color:#fff;text-align:right}
+.cat-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:1.25rem}
+.cat-pill{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;background:rgba(29,191,171,.1);border:1px solid rgba(29,191,171,.25);color:var(--teal)}
+
+/* ---- ILLUSTRATION DIVIDER ---- */
+.illus-divider{background:#0D0D0D;padding:60px 2rem;overflow:hidden}
+.illus-inner{max-width:1100px;margin:0 auto}
+.illus-label{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--teal);text-align:center;margin-bottom:2rem}
+.illus-row{display:flex;gap:0;align-items:flex-end;justify-content:center;flex-wrap:wrap}
+.illus-card{flex:1;min-width:180px;max-width:260px;text-align:center;padding:1.5rem 1rem;position:relative}
+.illus-card svg{width:100%;max-width:160px;height:auto;display:block;margin:0 auto}
+.illus-age{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:32px;color:var(--teal);margin-top:.75rem;line-height:1}
+.illus-name{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(245,245,242,.5);margin-top:3px}
+.illus-divider-line{width:1px;background:rgba(29,191,171,.15);align-self:stretch}
+
+/* ---- CATEGORIES ---- */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-top:3rem}
+.cat-card{background:var(--mid2);border:1px solid rgba(255,255,255,.07);padding:2rem;position:relative;overflow:hidden;transition:all .3s}
+.cat-card:hover{border-color:var(--teal);background:rgba(29,191,171,.05)}
+.cat-card-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1rem}
+.cat-age-badge{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:48px;color:var(--teal);line-height:1}
+.cat-card-illo{width:60px;height:80px;flex-shrink:0;opacity:.7}
+.cat-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;letter-spacing:1.5px;text-transform:uppercase;color:#fff;margin-bottom:6px}
+.cat-desc{font-size:13px;color:rgba(245,245,242,.5);line-height:1.6;margin-bottom:1rem}
+.cat-born{font-size:12px;color:var(--teal);font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:1px}
+.cat-tag{display:inline-block;margin-top:.75rem;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;background:rgba(29,191,171,.1);border:1px solid rgba(29,191,171,.2);color:var(--teal)}
+.placeholder-note{margin-top:1.5rem;font-size:12px;color:var(--muted);text-align:center}
+
+/* ---- SCHEDULE ---- */
+.sched-tabs{display:flex;gap:0;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:2rem}
+.s-tab{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;padding:12px 28px;background:none;border:none;border-bottom:2px solid transparent;color:var(--muted);cursor:pointer;transition:all .2s}
+.s-tab.active{color:var(--teal);border-bottom-color:var(--teal)}
+.sched-content{display:none}.sched-content.active{display:block}
+.sched-list{display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,.04)}
+.sched-row{display:grid;grid-template-columns:110px 1fr auto;gap:1.5rem;align-items:center;padding:1rem 1.25rem;background:var(--black);transition:background .2s}
+.sched-row:hover{background:rgba(29,191,171,.04)}
+.s-time{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;color:var(--teal);letter-spacing:.5px}
+.s-event{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:15px;color:#fff}
+.s-sub{font-size:12px;color:var(--muted);margin-top:2px}
+.s-badge{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;background:rgba(29,191,171,.08);color:var(--teal);white-space:nowrap}
+
+/* ---- SPONSORS ---- */
+.pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:3rem}
+.pkg-card{background:var(--mid2);border:1px solid rgba(255,255,255,.07);padding:1.5rem;position:relative;transition:all .3s}
+.pkg-card.featured{border-color:var(--teal);background:rgba(29,191,171,.06)}
+.pkg-card.featured::before{content:'MOST POPULAR';position:absolute;top:-1px;left:50%;transform:translateX(-50%);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:2px;background:var(--teal);color:var(--black);padding:3px 12px;white-space:nowrap}
+.pkg-tier{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;letter-spacing:2px;text-transform:uppercase}
+.pkg-price{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:28px;color:#fff;margin:.25rem 0}
+.pkg-slots{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:1rem}
+.pkg-benefits{list-style:none;display:flex;flex-direction:column;gap:7px}
+.pkg-benefits li{font-size:13px;color:rgba(245,245,242,.6);display:flex;gap:8px;line-height:1.4}
+.pkg-benefits li::before{content:'';width:5px;height:5px;background:var(--teal);border-radius:50%;flex-shrink:0;margin-top:5px}
+.diamond .pkg-tier{color:#B8D4E8}
+.emerald .pkg-tier{color:var(--teal)}
+.ruby .pkg-tier{color:#E85555}
+.sapphire .pkg-tier{color:#5588E8}
+.amber .pkg-tier{color:#E8A535}
+.sponsor-cta-box{margin-top:3rem;padding:2.5rem;background:rgba(29,191,171,.05);border:1px solid rgba(29,191,171,.18);text-align:center}
+.sponsor-cta-box p{font-size:15px;color:rgba(245,245,242,.65);max-width:600px;margin:0 auto 1.5rem;line-height:1.8}
+.sponsor-logos-wall{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-top:2rem}
+.sponsor-logo-slot{width:120px;height:60px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center}
+.sponsor-logo-slot img{max-width:100%;max-height:50px;object-fit:contain;filter:grayscale(30%)}
+
+/* ---- VENUE ---- */
+.venue-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.venue-body p{font-size:15px;color:rgba(245,245,242,.65);line-height:1.8;margin-bottom:1.5rem}
+.venue-details{display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,.04);margin-top:1.5rem}
+.vd-row{display:flex;gap:1rem;align-items:center;padding:.875rem 1rem;background:var(--black)}
+.vd-icon{width:34px;height:34px;background:rgba(29,191,171,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.vd-content .vd-label{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.vd-content .vd-val{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;color:#fff}
+.venue-visual{position:relative}
+.venue-photo{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.venue-photo-placeholder{width:100%;aspect-ratio:4/3;background:var(--mid2);border:1px solid rgba(29,191,171,.15);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem}
+.venue-photo-placeholder span{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--teal)}
+.venue-photo-placeholder small{font-size:12px;color:var(--muted)}
+.map-btn-wrap{margin-top:1rem;text-align:center}
+
+/* ---- FAQ ---- */
+.faq-list{display:flex;flex-direction:column;gap:1px;max-width:820px;margin:3rem auto 0}
+.faq-item{background:var(--mid2);border-left:2px solid transparent;transition:all .2s}
+.faq-item.open{border-left-color:var(--teal);background:rgba(29,191,171,.05)}
+.faq-q{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;letter-spacing:.3px;color:#fff;padding:1.25rem 1.5rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.faq-arrow{color:var(--teal);font-size:16px;flex-shrink:0;transition:transform .25s}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-a{display:none;padding:0 1.5rem 1.25rem;font-size:14px;color:rgba(245,245,242,.65);line-height:1.8}
+.faq-item.open .faq-a{display:block}
+
+/* ---- REGISTER CTA ---- */
+.register-cta{background:var(--teal);padding:70px 2rem;text-align:center}
+.register-cta .eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:rgba(0,0,0,.55);margin-bottom:.5rem}
+.register-cta h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(36px,7vw,68px);text-transform:uppercase;color:var(--black);line-height:.92;margin-bottom:1.25rem}
+.register-cta p{font-size:15px;color:rgba(0,0,0,.6);max-width:520px;margin:0 auto 2rem;line-height:1.7}
+.btn-dark{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:2px;text-transform:uppercase;background:var(--black);color:var(--teal);padding:14px 36px;border:none;cursor:pointer;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);transition:all .2s}
+.btn-dark:hover{background:var(--mid2);transform:translateY(-2px)}
+
+/* ---- CONTACT ---- */
+.contact-inner{max-width:720px;margin:0 auto;text-align:center}
+.contact-inner p.desc{font-size:15px;color:rgba(245,245,242,.65);line-height:1.8;margin-bottom:2.5rem}
+.contact-cards{display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem}
+.contact-card{background:var(--mid2);border:1px solid rgba(29,191,171,.15);padding:1.5rem 2rem;min-width:200px}
+.cc-label{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.cc-val{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--teal)}
+.cc-name{font-size:12px;color:rgba(245,245,242,.4);margin-top:4px}
+.contact-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* ---- FOOTER ---- */
+footer{background:#050505;border-top:1px solid rgba(29,191,171,.08);padding:2.5rem 2rem;text-align:center}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;letter-spacing:3px;color:var(--teal);text-transform:uppercase}
+.footer-sub{font-size:13px;color:var(--muted);margin:.25rem 0 1.25rem}
+.footer-links{display:flex;gap:1.75rem;justify-content:center;list-style:none;flex-wrap:wrap;margin-bottom:1.5rem}
+.footer-links a{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--teal)}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.15)}
+
+/* ---- RESPONSIVE ---- */
+@media(max-width:1024px){
+  .about-grid{grid-template-columns:1fr;gap:2.5rem}
+  .venue-grid{grid-template-columns:1fr;gap:2rem}
+}
+@media(max-width:768px){
+  nav .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  section{padding:60px 1.25rem}
+  .sched-row{grid-template-columns:90px 1fr}
+  .s-badge{display:none}
+  .pkg-grid{grid-template-columns:1fr 1fr}
+  .illus-row{gap:.5rem}
+  .illus-card{min-width:130px}
+  .illus-divider-line{display:none}
+  .cd-num{font-size:clamp(28px,8vw,48px);min-width:clamp(44px,12vw,70px)}
+}
+@media(max-width:480px){
+  .hero-badge{flex-direction:column;gap:.5rem}
+  .hero-sep{display:none}
+  .pkg-grid{grid-template-columns:1fr}
+  .contact-cards{flex-direction:column;align-items:center}
+  .countdown{gap:6px}
+  .cd-sep{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- EDIT TOOLBAR -->
+<div id="edit-toolbar">
+  <div id="edit-hint">Edit Mode ON — click any highlighted text to edit</div>
+  <div style="display:flex;gap:8px">
+    <button class="edit-btn" id="btn-export" onclick="exportData()">Export Data</button>
+    <button class="edit-btn" id="btn-toggle" onclick="toggleEditMode()">Edit Mode</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a class="nav-logo" href="#home">
+    <img id="nav-logo-img" src="https://res.cloudinary.com/dzpcl4hq2/image/upload/v1777638059/Porto_2026_logo-removebg-preview_e3pvaz.png" alt="Porto 2026" style="height:42px;width:auto;display:block;background:none">
+  </a>
+  <ul class="nav-links" id="nav-links"></ul>
+  <button class="nav-cta" id="nav-cta" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})"></button>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <ul id="mobile-nav-links"></ul>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-img" id="hero-bg"></div>
+  <svg class="hero-lines" viewBox="0 0 200 320" fill="none">
+    <line x1="0" y1="320" x2="200" y2="100" stroke="#1DBFAB" stroke-width="1.5"/>
+    <line x1="0" y1="290" x2="200" y2="70"  stroke="#1DBFAB" stroke-width="1"/>
+    <line x1="0" y1="260" x2="200" y2="40"  stroke="#1DBFAB" stroke-width=".6"/>
+    <line x1="0" y1="230" x2="200" y2="10"  stroke="#1DBFAB" stroke-width=".3"/>
+  </svg>
+  <svg class="hero-lines-r" viewBox="0 0 200 320" fill="none">
+    <line x1="0" y1="320" x2="200" y2="100" stroke="#1DBFAB" stroke-width="1.5"/>
+    <line x1="0" y1="290" x2="200" y2="70"  stroke="#1DBFAB" stroke-width="1"/>
+    <line x1="0" y1="260" x2="200" y2="40"  stroke="#1DBFAB" stroke-width=".6"/>
+  </svg>
+  <div class="hero-content">
+    <div class="hero-eyebrow" id="hero-eyebrow"></div>
+    <img class="hero-logo" src="https://res.cloudinary.com/dzpcl4hq2/image/upload/v1777638059/Porto_2026_logo-removebg-preview_e3pvaz.png" alt="Porto 2026" style="background:none;display:block;margin:0 auto">
+    <h1 class="hero-title"><span id="hero-title"></span><span class="accent" id="hero-accent"></span></h1>
+    <p class="hero-subtitle" id="hero-subtitle"></p>
+    <div class="hero-badge">
+      <span class="hero-date-text" id="hero-date"></span>
+      <div class="hero-sep"></div>
+      <span class="hero-venue-text" id="hero-venue"></span>
+    </div>
+    <div class="countdown-wrap">
+      <div class="countdown-label">Tournament begins in</div>
+      <div class="countdown" id="countdown">
+        <div class="cd-unit"><div class="cd-num" id="cd-days">000</div><div class="cd-sub">Days</div></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><div class="cd-num" id="cd-hours">00</div><div class="cd-sub">Hours</div></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><div class="cd-num" id="cd-mins">00</div><div class="cd-sub">Minutes</div></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><div class="cd-num" id="cd-secs">00</div><div class="cd-sub">Seconds</div></div>
+      </div>
+    </div>
+    <div class="hero-btns">
+      <button class="btn-primary" id="hero-cta1" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})"></button>
+      <button class="btn-outline" id="hero-cta2" onclick="document.getElementById('sponsors').scrollIntoView({behavior:'smooth'})"></button>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Scroll</span><div class="scroll-arrow"></div></div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar"><div class="stats-inner" id="stats-inner"></div></div>
+
+<!-- ABOUT -->
+<section style="background:var(--black)" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-body">
+        <p class="sec-label" id="about-label"></p>
+        <h2 class="sec-title" id="about-heading"></h2>
+        <div id="about-paras"></div>
+        <div class="highlights" id="highlights"></div>
+      </div>
+      <div>
+        <div class="event-card">
+          <div class="ec-header">Event Details</div>
+          <div id="event-details-rows"></div>
+          <div style="margin-top:1.25rem">
+            <div class="ec-label" style="margin-bottom:.75rem">Categories</div>
+            <div class="cat-pills" id="cat-pills-about"></div>
+          </div>
+        </div>
+        <!-- About photo slot -->
+        <div id="about-photo-wrap" style="margin-top:1.25rem"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLAYER ILLUSTRATION DIVIDER -->
+<div class="illus-divider">
+  <div class="illus-inner">
+    <div class="illus-label">Meet Our Players</div>
+    <div class="illus-row" id="illus-row"></div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section style="background:#0D0D0D" id="categories">
+  <div class="container">
+    <p class="sec-label">Who Can Play</p>
+    <h2 class="sec-title">AGE <span class="accent">CATEGORIES</span></h2>
+    <div class="cat-grid" id="cat-grid"></div>
+    <p class="placeholder-note">[PLACEHOLDER — Age eligibility & squad sizes to be confirmed by organiser]</p>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section style="background:var(--black)" id="schedule">
+  <div class="container">
+    <p class="sec-label">Tournament Schedule</p>
+    <h2 class="sec-title">TWO DAYS <span class="accent">OF ACTION</span></h2>
+    <div class="sched-tabs">
+      <button class="s-tab active" onclick="switchTab('day1',this)" id="tab-day1"></button>
+      <button class="s-tab" onclick="switchTab('day2',this)" id="tab-day2"></button>
+    </div>
+    <div class="sched-content active" id="sched-day1"></div>
+    <div class="sched-content" id="sched-day2"></div>
+    <p class="placeholder-note">[PLACEHOLDER — Final schedule subject to number of registered teams]</p>
+  </div>
+</section>
+
+<!-- SPONSORS -->
+<section style="background:#0D0D0D" id="sponsors">
+  <div class="container">
+    <p class="sec-label">Sponsorship Opportunities</p>
+    <h2 class="sec-title">BE PART OF <span class="accent">SOMETHING REAL</span></h2>
+    <p style="max-width:680px;font-size:15px;color:rgba(245,245,242,.65);line-height:1.8" id="sponsor-intro"></p>
+    <div class="pkg-grid" id="pkg-grid"></div>
+    <div class="sponsor-cta-box">
+      <p>Interested in becoming a Porto '26 sponsor? Download the full proposal or speak directly with our funding team.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <button class="btn-primary">Download Sponsorship Brief</button>
+        <button class="btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Our Team</button>
+      </div>
+    </div>
+    <div id="sponsor-logos-section"></div>
+  </div>
+</section>
+
+<!-- VENUE -->
+<section style="background:var(--black)" id="venue">
+  <div class="container">
+    <div class="venue-grid">
+      <div class="venue-body">
+        <p class="sec-label" id="venue-label"></p>
+        <h2 class="sec-title" id="venue-heading"></h2>
+        <p id="venue-desc"></p>
+        <div class="venue-details" id="venue-details"></div>
+      </div>
+      <div class="venue-visual">
+        <div style="width:100%;border:1px solid rgba(29,191,171,0.2);overflow:hidden;border-radius:2px">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.858!2d101.7145774!3d3.1929593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc374ed5fc1a55%3A0x2e16e4c7f3acc2ee!2sArena%20Sukan%20Kuala%20Lumpur!5e0!3m2!1sen!2smy!4v1"
+            width="100%"
+            height="380"
+            style="border:0;display:block;filter:grayscale(30%) contrast(1.1)"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <div class="map-btn-wrap">
+          <a class="btn-outline" href="https://www.google.com/maps/place/Arena+Sukan+Kuala+Lumpur/@3.1929593,101.7145774,903m" target="_blank" rel="noopener" style="display:inline-block;text-decoration:none">Open in Google Maps ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:#0D0D0D" id="faq">
+  <div class="container">
+    <p class="sec-label" style="text-align:center">Got Questions?</p>
+    <h2 class="sec-title" style="text-align:center">FREQUENTLY ASKED <span class="accent">QUESTIONS</span></h2>
+    <div class="faq-list" id="faq-list"></div>
+  </div>
+</section>
+
+<!-- REGISTER CTA -->
+<section class="register-cta" id="register">
+  <div class="eyebrow">Ready to compete?</div>
+  <h2>REGISTER YOUR<br>TEAM TODAY</h2>
+  <p>Spots are limited. Secure your team's place at the Porto 2026 National Touch Rugby Tournament before registration closes.</p>
+  <button class="btn-dark">Register Your Team Now</button>
+</section>
+
+<!-- CONTACT -->
+<section style="background:var(--black)" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <p class="sec-label" style="justify-content:center;display:flex;align-items:center;gap:12px">Get In Touch</p>
+      <h2 class="sec-title" id="contact-heading"></h2>
+      <p class="desc" id="contact-desc"></p>
+      <div class="contact-cards" id="contact-cards"></div>
+      <div class="contact-btns">
+        <button class="btn-primary">Download Tournament Brief</button>
+        <button class="btn-outline">Download Sponsorship Deck</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand" id="footer-brand"></div>
+  <p class="footer-sub">National Touch Rugby Tournament · Blitz Rugby Club · Arena Sukan Kuala Lumpur</p>
+  <ul class="footer-links" id="footer-links"></ul>
+  <p class="footer-copy">© 2026 Blitz Rugby Club. Porto 2026 National Touch Rugby Tournament. All rights reserved.</p>
+</footer>
+
+<script>
+/* =============================================
+   SVG PLAYER ILLUSTRATIONS
+   Brand-accurate silhouettes for each category
+   ============================================= */
+const ILLUSTRATIONS = {
+  girlU10: `<svg viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- U10 Girl — small, joyful, running with ball -->
+    <circle cx="60" cy="22" r="13" fill="#1DBFAB" opacity=".9"/>
+    <!-- ponytail -->
+    <path d="M66 12 Q80 8 78 20" stroke="#1DBFAB" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <!-- body -->
+    <path d="M48 35 Q60 32 72 35 L76 80 Q70 85 60 84 Q50 85 44 80 Z" fill="#1DBFAB" opacity=".85"/>
+    <!-- skirt/shorts -->
+    <path d="M44 75 Q60 80 76 75 L78 95 Q60 98 42 95 Z" fill="#0F8A7A"/>
+    <!-- left leg -->
+    <path d="M48 92 Q44 120 38 145 Q34 155 36 160" stroke="#1DBFAB" stroke-width="10" stroke-linecap="round" fill="none"/>
+    <!-- right leg running forward -->
+    <path d="M64 92 Q68 110 74 125 Q80 138 82 148" stroke="#1DBFAB" stroke-width="10" stroke-linecap="round" fill="none"/>
+    <!-- shoes -->
+    <ellipse cx="35" cy="162" rx="10" ry="5" fill="#0A0A0A" stroke="#1DBFAB" stroke-width="1.5"/>
+    <ellipse cx="84" cy="150" rx="10" ry="5" fill="#0A0A0A" stroke="#1DBFAB" stroke-width="1.5"/>
+    <!-- left arm with ball -->
+    <path d="M48 40 Q30 55 24 70" stroke="#1DBFAB" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <!-- ball -->
+    <ellipse cx="20" cy="76" rx="10" ry="7" fill="#1DBFAB" opacity=".9" transform="rotate(-20 20 76)"/>
+    <path d="M15 72 Q20 76 25 80" stroke="#0A0A0A" stroke-width="1" stroke-linecap="round" fill="none"/>
+    <!-- right arm up -->
+    <path d="M72 40 Q88 38 92 28" stroke="#1DBFAB" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <!-- speed lines -->
+    <line x1="0" y1="90" x2="16" y2="90" stroke="#1DBFAB" stroke-width="1.5" opacity=".4"/>
+    <line x1="0" y1="100" x2="12" y2="100" stroke="#1DBFAB" stroke-width="1" opacity=".25"/>
+    <line x1="0" y1="110" x2="8" y2="110" stroke="#1DBFAB" stroke-width=".7" opacity=".15"/>
+  </svg>`,
+
+  girlU12: `<svg viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- U12 Girl — taller, more athletic, mid-sprint -->
+    <circle cx="60" cy="20" r="14" fill="#1DBFAB" opacity=".9"/>
+    <!-- ponytail flowing back -->
+    <path d="M66 10 Q82 5 88 18 Q84 24 76 22" stroke="#1DBFAB" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <!-- body torso -->
+    <path d="M46 34 Q60 30 74 34 L78 82 Q70 88 60 87 Q50 88 42 82 Z" fill="#1DBFAB" opacity=".85"/>
+    <!-- shorts -->
+    <path d="M42 78 Q60 84 78 78 L80 100 Q60 104 40 100 Z" fill="#0F8A7A"/>
+    <!-- left leg bent back -->
+    <path d="M48 98 Q42 118 36 138 Q32 150 30 158" stroke="#1DBFAB" stroke-width="11" stroke-linecap="round" fill="none"/>
+    <!-- right leg forward -->
+    <path d="M66 98 Q72 115 80 132 Q86 144 88 154" stroke="#1DBFAB" stroke-width="11" stroke-linecap="round" fill="none"/>
+    <!-- shoes -->
+    <ellipse cx="28" cy="161" rx="11" ry="5.5" fill="#0A0A0A" stroke="#1DBFAB" stroke-width="1.5"/>
+    <ellipse cx="90" cy="157" rx="11" ry="5.5" fill="#0A0A0A" stroke="#1DBFAB" stroke-width="1.5"/>
+    <!-- left arm with ball tucked -->
+    <path d="M46 40 Q28 52 20 65" stroke="#1DBFAB" stroke-width="9" stroke-linecap="round" fill="none"/>
+    <ellipse cx="16" cy="71" rx="11" ry="8" fill="#1DBFAB" opacity=".9" transform="rotate(-25 16 71)"/>
+    <path d="M10 67 Q16 71 22 75" stroke="#0A0A0A" stroke-width="1" stroke-linecap="round" fill="none"/>
+    <!-- right arm pumping -->
+    <path d="M74 40 Q90 45 96 36" stroke="#1DBFAB" stroke-width="9" stroke-linecap="round" fill="none"/>
+    <!-- speed lines -->
+    <line x1="0" y1="80" x2="14" y2="80" stroke="#1DBFAB" stroke-width="2" opacity=".4"/>
+    <line x1="0" y1="92" x2="10" y2="92" stroke="#1DBFAB" stroke-width="1.2" opacity=".25"/>
+  </svg>`,
+
+  girlU16: `<svg viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- U16 Girl — near-adult height, full sprint, hair tied -->
+    <circle cx="60" cy="18" r="15" fill="#1DBFAB" opacity=".9"/>
+    <!-- bun / tight ponytail -->
+    <circle cx="72" cy="10" r="5" fill="#1DBFAB" opacity=".7"/>
+    <!-- body — athletic build -->
+    <path d="M44 33 Q60 28 76 33 L80 80 Q70 88 60 87 Q50 88 40 80 Z" fill="#1DBFAB" opacity=".85"/>
+    <!-- shorts -->
+    <path d="M40 76 Q60 84 80 76 L82 100 Q60 106 38 100 Z" fill="#0F8A7A"/>
+    <!-- left leg back kick -->
+    <path d="M46 98 Q38 122 28 148 Q24 158 22 168" stroke="#1DBFAB" stroke-width="12" stroke-linecap="round" fill="none"/>
+    <!-- right leg driving forward -->
+    <path d="M68 98 Q76 118 86 138 Q92 150 96 162" stroke="#1DBFAB" stroke-width="12" stroke-linecap="round" fill="none"/>
+    <!-- shoes -->
+    <ellipse cx="20" cy="171" rx="13" ry="6" fill="#0A0A0A" stroke="#1DBFAB" stroke-width="1.5"/>
+    <ellipse cx="98" cy="165" rx="13" ry="6" fill="#0A0A0A" stroke="#1DBFAB" stroke-width="1.5"/>
+    <!-- left arm — ball carry low -->
+    <path d="M44 38 Q24 52 14 68" stroke="#1DBFAB" stroke-width="10" stroke-linecap="round" fill="none"/>
+    <ellipse cx="10" cy="75" rx="12" ry="8.5" fill="#1DBFAB" opacity=".9" transform="rotate(-28 10 75)"/>
+    <path d="M4 71 Q10 75 16 79" stroke="#0A0A0A" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+    <!-- right arm high pump -->
+    <path d="M76 38 Q94 40 100 28" stroke="#1DBFAB" stroke-width="10" stroke-linecap="round" fill="none"/>
+    <!-- speed lines -->
+    <line x1="0" y1="72" x2="8" y2="72" stroke="#1DBFAB" stroke-width="2" opacity=".35"/>
+    <line x1="0" y1="84" x2="6" y2="84" stroke="#1DBFAB" stroke-width="1.2" opacity=".2"/>
+    <line x1="0" y1="95" x2="4" y2="95" stroke="#1DBFAB" stroke-width=".7" opacity=".12"/>
+  </svg>`,
+
+  boyU12: `<svg viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- U12 Boy — stockier build, low aggressive run -->
+    <circle cx="60" cy="20" r="15" fill="#5DCFC3" opacity=".9"/>
+    <!-- short hair -->
+    <path d="M46 14 Q60 8 74 14" stroke="#0F8A7A" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <!-- wider torso -->
+    <path d="M42 35 Q60 30 78 35 L82 84 Q70 92 60 90 Q50 92 38 84 Z" fill="#5DCFC3" opacity=".85"/>
+    <!-- shorts -->
+    <path d="M38 80 Q60 88 82 80 L84 104 Q60 110 36 104 Z" fill="#0F6E56"/>
+    <!-- left leg planted -->
+    <path d="M46 102 Q40 124 32 148 Q28 158 26 166" stroke="#5DCFC3" stroke-width="13" stroke-linecap="round" fill="none"/>
+    <!-- right leg powerful drive -->
+    <path d="M70 102 Q78 122 88 142 Q94 154 98 164" stroke="#5DCFC3" stroke-width="13" stroke-linecap="round" fill="none"/>
+    <!-- shoes -->
+    <ellipse cx="24" cy="169" rx="13" ry="6.5" fill="#0A0A0A" stroke="#5DCFC3" stroke-width="1.5"/>
+    <ellipse cx="100" cy="167" rx="13" ry="6.5" fill="#0A0A0A" stroke="#5DCFC3" stroke-width="1.5"/>
+    <!-- left arm — ball gripped firmly -->
+    <path d="M42 42 Q22 55 14 72" stroke="#5DCFC3" stroke-width="11" stroke-linecap="round" fill="none"/>
+    <ellipse cx="10" cy="79" rx="13" ry="9" fill="#5DCFC3" opacity=".9" transform="rotate(-22 10 79)"/>
+    <path d="M4 75 Q10 79 16 83" stroke="#0A0A0A" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+    <!-- right arm strong back swing -->
+    <path d="M78 42 Q96 44 104 32" stroke="#5DCFC3" stroke-width="11" stroke-linecap="round" fill="none"/>
+    <!-- speed lines — more intense -->
+    <line x1="0" y1="70" x2="10" y2="70" stroke="#5DCFC3" stroke-width="2.5" opacity=".4"/>
+    <line x1="0" y1="82" x2="7" y2="82" stroke="#5DCFC3" stroke-width="1.5" opacity=".28"/>
+    <line x1="0" y1="94" x2="5" y2="94" stroke="#5DCFC3" stroke-width=".8" opacity=".15"/>
+  </svg>`
+};
+
+/* =============================================
+   RENDERING ENGINE — reads SITE_DATA, builds DOM
+   ============================================= */
+function render() {
+  const D = SITE_DATA;
+
+  // Nav
+  // nav-brand is now the logo image — no text to set
+  const nl = document.getElementById('nav-links');
+  nl.innerHTML = D.nav.links.map(l=>`<li><a href="#${l.toLowerCase()}">${l}</a></li>`).join('');
+  document.getElementById('nav-cta').textContent = D.nav.cta;
+  const mnl = document.getElementById('mobile-nav-links');
+  mnl.innerHTML = D.nav.links.map(l=>`<li><a href="#${l.toLowerCase()}" onclick="closeMenu()">${l}</a></li>`).join('');
+
+  // Hero
+  document.getElementById('hero-eyebrow').textContent = D.hero.eyebrow;
+  document.getElementById('hero-title').textContent = D.hero.title;
+  document.getElementById('hero-accent').textContent = D.hero.titleAccent;
+  document.getElementById('hero-subtitle').textContent = D.hero.subtitle;
+  document.getElementById('hero-date').textContent = D.hero.date;
+  document.getElementById('hero-venue').textContent = D.hero.venue;
+  document.getElementById('hero-cta1').textContent = D.hero.cta1;
+  document.getElementById('hero-cta2').textContent = D.hero.cta2;
+  if(D.images.heroBg) {
+    document.getElementById('hero-bg').style.backgroundImage = `url(${D.images.heroBg})`;
+  }
+
+  // Stats
+  document.getElementById('stats-inner').innerHTML = D.stats.map(s=>
+    `<div class="stat-item"><div class="stat-num">${s.num}</div><div class="stat-lbl">${s.label}</div></div>`
+  ).join('');
+
+  // About
+  document.getElementById('about-label').textContent = D.about.label;
+  document.getElementById('about-heading').innerHTML = `${D.about.heading} <span class="accent">${D.about.headingAccent}</span>`;
+  document.getElementById('about-paras').innerHTML = D.about.paragraphs.map(p=>`<p>${p}</p>`).join('');
+  document.getElementById('highlights').innerHTML = D.about.highlights.map(h=>`
+    <div class="hl-item">
+      <svg class="hl-icon" viewBox="0 0 30 30" fill="none">
+        <rect width="30" height="30" fill="rgba(29,191,171,0.12)"/>
+        <path d="M15 5 L11 17 L15 17 L13 25 L19 13 L15 13 Z" fill="#1DBFAB"/>
+      </svg>
+      <div><div class="hl-title">${h.title}</div><div class="hl-text">${h.text}</div></div>
+    </div>`
+  ).join('');
+  const ed = D.about.eventDetails;
+  document.getElementById('event-details-rows').innerHTML = Object.entries(ed).map(([k,v])=>
+    `<div class="ec-row"><span class="ec-label">${k.charAt(0).toUpperCase()+k.slice(1)}</span><span class="ec-val">${v}</span></div>`
+  ).join('');
+  document.getElementById('cat-pills-about').innerHTML = D.categories.map(c=>
+    `<span class="cat-pill">${c.age}</span>`
+  ).join('');
+  // About photo
+  const apw = document.getElementById('about-photo-wrap');
+  if(D.images.aboutPhoto) {
+    apw.innerHTML = `<img src="${D.images.aboutPhoto}" alt="Tournament action" style="width:100%;object-fit:cover;border:1px solid rgba(29,191,171,.15)">`;
+  }
+
+  // Illustration divider
+  document.getElementById('illus-row').innerHTML = D.categories.map((c,i)=>`
+    ${i>0?'<div class="illus-divider-line"></div>':''}
+    <div class="illus-card">
+      ${ILLUSTRATIONS[c.illustrationKey]||''}
+      <div class="illus-age">${c.age}</div>
+      <div class="illus-name">${c.gender}</div>
+    </div>
+  `).join('');
+
+  // Categories
+  document.getElementById('cat-grid').innerHTML = D.categories.map(c=>`
+    <div class="cat-card">
+      <div class="cat-card-header">
+        <div class="cat-age-badge">${c.age}</div>
+        <div class="cat-card-illo">${ILLUSTRATIONS[c.illustrationKey]||''}</div>
+      </div>
+      <div class="cat-name">${c.name}</div>
+      <div class="cat-desc">${c.desc}</div>
+      <div class="cat-born">${c.born}</div>
+      <span class="cat-tag">${c.genderTag}</span>
+    </div>`
+  ).join('');
+
+  // Schedule
+  document.getElementById('tab-day1').textContent = D.schedule.day1.label;
+  document.getElementById('tab-day2').textContent = D.schedule.day2.label;
+  ['day1','day2'].forEach(d=>{
+    document.getElementById(`sched-${d}`).innerHTML = `
+      <div class="sched-list">${D.schedule[d].items.map(r=>`
+        <div class="sched-row">
+          <span class="s-time">${r.time}</span>
+          <div><div class="s-event">${r.event}</div><div class="s-sub">${r.sub}</div></div>
+          <span class="s-badge">${r.badge}</span>
+        </div>`).join('')}
+      </div>`;
+  });
+
+  // Sponsors
+  document.getElementById('sponsor-intro').textContent = D.sponsors.intro;
+  document.getElementById('pkg-grid').innerHTML = D.sponsors.packages.map(p=>`
+    <div class="pkg-card ${p.colorClass}${p.featured?' featured':''}">
+      <div class="pkg-tier">${p.tier}</div>
+      <div class="pkg-price">${p.amount}</div>
+      <div class="pkg-slots">${p.slots} slot${p.slots>1?'s':''} · Total ${p.pool}</div>
+      <ul class="pkg-benefits">${p.benefits.map(b=>`<li>${b}</li>`).join('')}</ul>
+    </div>`).join('');
+
+  // Sponsor logos wall
+  const allLogos = [
+    ...D.images.sponsors.diamond,...D.images.sponsors.emerald,
+    ...D.images.sponsors.ruby,...D.images.sponsors.sapphire,...D.images.sponsors.amber
+  ].filter(Boolean);
+  if(allLogos.length>0){
+    document.getElementById('sponsor-logos-section').innerHTML = `
+      <div style="margin-top:3rem">
+        <p class="sec-label" style="text-align:center;margin-bottom:1.5rem">Our Sponsors</p>
+        <div class="sponsor-logos-wall">${allLogos.map(url=>
+          `<div class="sponsor-logo-slot"><img src="${url}" alt="Sponsor"></div>`
+        ).join('')}</div>
+      </div>`;
+  }
+
+  // Venue
+  document.getElementById('venue-label').textContent = D.venue.label;
+  document.getElementById('venue-heading').innerHTML = `${D.venue.heading} <span class="accent">${D.venue.headingAccent}</span>`;
+  document.getElementById('venue-desc').textContent = D.venue.desc;
+  document.getElementById('venue-details').innerHTML = [
+    { icon:'M', label:'Address', val:D.venue.name+', '+D.venue.address },
+    { icon:'C', label:'Event Hours', val:D.venue.hours },
+    { icon:'F', label:'Facilities', val:D.venue.facilities },
+    { icon:'L', label:'Nearest LRT', val:D.venue.lrt }
+  ].map(r=>`
+    <div class="vd-row">
+      <div class="vd-icon">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke="#1DBFAB" stroke-width="1.5" fill="none"/>
+          <circle cx="9" cy="9" r="2.5" fill="#1DBFAB"/>
+        </svg>
+      </div>
+      <div class="vd-content"><div class="vd-label">${r.label}</div><div class="vd-val">${r.val}</div></div>
+    </div>`).join('');
+
+  // venue-photo-wrap replaced by embedded Google Map — no JS needed
+
+  // FAQ
+  document.getElementById('faq-list').innerHTML = D.faq.map((f,i)=>`
+    <div class="faq-item${i===0?' open':''}">
+      <div class="faq-q" onclick="toggleFaq(this)">${f.q}<span class="faq-arrow">▼</span></div>
+      <div class="faq-a">${f.a}</div>
+    </div>`).join('');
+
+  // Contact
+  document.getElementById('contact-heading').innerHTML = `${D.contact.heading} <span class="accent">${D.contact.headingAccent}</span>`;
+  document.getElementById('contact-desc').textContent = D.contact.desc;
+  document.getElementById('contact-cards').innerHTML = D.contact.contacts.map(c=>`
+    <div class="contact-card">
+      <div class="cc-label">${c.label}</div>
+      <div class="cc-val">${c.value}</div>
+      <div class="cc-name">${c.name}</div>
+    </div>`).join('');
+
+  // Footer
+  document.getElementById('footer-brand').textContent = D.nav.brand;
+  document.getElementById('footer-links').innerHTML = D.nav.links.map(l=>
+    `<li><a href="#${l.toLowerCase()}">${l}</a></li>`
+  ).join('');
+}
+
+/* =============================================
+   COUNTDOWN TIMER
+   ============================================= */
+function updateCountdown(){
+  const target = new Date(SITE_DATA.hero.countdownTarget).getTime();
+  const now = Date.now();
+  const diff = target - now;
+  if(diff <= 0){
+    document.getElementById('countdown').innerHTML = `<div class="cd-finished">The Tournament Has Begun!</div>`;
+    return;
+  }
+  const days  = Math.floor(diff / 86400000);
+  const hours = Math.floor((diff % 86400000) / 3600000);
+  const mins  = Math.floor((diff % 3600000)  / 60000);
+  const secs  = Math.floor((diff % 60000)    / 1000);
+  document.getElementById('cd-days').textContent  = String(days).padStart(3,'0');
+  document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
+  document.getElementById('cd-mins').textContent  = String(mins).padStart(2,'0');
+  document.getElementById('cd-secs').textContent  = String(secs).padStart(2,'0');
+}
+
+/* =============================================
+   INTERACTIVE BEHAVIOURS
+   ============================================= */
+function switchTab(id,btn){
+  document.querySelectorAll('.sched-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.s-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('sched-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+function toggleFaq(el){
+  const item = el.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+function toggleMenu(){
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('mobile-menu').classList.remove('open');
+}
+// openMap replaced by direct href link
+
+/* =============================================
+   EDIT MODE
+   ============================================= */
+function toggleEditMode(){
+  const body = document.body;
+  const btn = document.getElementById('btn-toggle');
+  const exportBtn = document.getElementById('btn-export');
+  const hint = document.getElementById('edit-hint');
+  const isActive = body.classList.toggle('edit-mode');
+  btn.classList.toggle('active', isActive);
+  btn.textContent = isActive ? 'Exit Edit Mode' : 'Edit Mode';
+  exportBtn.style.display = isActive ? 'block' : 'none';
+  hint.style.display = isActive ? 'block' : 'none';
+  if(isActive){
+    document.querySelectorAll('[data-edit]').forEach(el=>{
+      el.contentEditable = 'true';
+    });
+  } else {
+    document.querySelectorAll('[data-edit]').forEach(el=>{
+      el.contentEditable = 'false';
+    });
+  }
+}
+function exportData(){
+  const dataStr = `const SITE_DATA = ${JSON.stringify(SITE_DATA, null, 2)};`;
+  navigator.clipboard.writeText(dataStr).then(()=>{
+    const btn = document.getElementById('btn-export');
+    btn.textContent = 'Copied!';
+    setTimeout(()=>btn.textContent='Export Data', 2000);
+  });
+}
+
+/* =============================================
+   INIT
+   ============================================= */
+document.addEventListener('DOMContentLoaded', function(){
+  render();
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+  document.getElementById('edit-toolbar').style.display = 'flex';
+
+  // Sticky nav shadow on scroll
+  window.addEventListener('scroll', function(){
+    document.getElementById('main-nav').style.boxShadow =
+      window.scrollY > 10 ? '0 2px 20px rgba(0,0,0,.5)' : 'none';
+  });
+});
+</script>
+</body>
+</html>
