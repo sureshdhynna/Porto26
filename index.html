@@ -175,16 +175,6 @@ const SITE_DATA = {
 html{scroll-behavior:smooth}
 body{font-family:'Barlow',sans-serif;background:var(--black);color:var(--off-white);overflow-x:hidden}
 
-/* ---- EDIT MODE ---- */
-body.edit-mode [data-edit]{outline:2px dashed rgba(29,191,171,0.5);cursor:text;min-width:20px;display:inline-block}
-body.edit-mode [data-edit]:hover{outline-color:var(--teal);background:rgba(29,191,171,0.06)}
-body.edit-mode [data-edit]:focus{outline:2px solid var(--teal);background:rgba(29,191,171,0.08)}
-#edit-toolbar{display:none;position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
-.edit-btn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;padding:10px 20px;border:none;cursor:pointer;clip-path:polygon(8px 0%,100% 0%,calc(100%-8px) 100%,0% 100%);transition:all .2s}
-#btn-toggle{background:var(--mid2);color:var(--teal);border:1px solid var(--teal)}
-#btn-toggle.active{background:var(--teal);color:var(--black)}
-#btn-export{background:var(--teal);color:var(--black);display:none}
-#edit-hint{display:none;font-size:12px;color:var(--teal);text-align:right;background:rgba(0,0,0,0.8);padding:6px 12px;border:1px solid rgba(29,191,171,0.2)}
 
 /* ---- NAV ---- */
 nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(10,10,10,0.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(29,191,171,0.12);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between}
@@ -411,15 +401,6 @@ footer{background:#050505;border-top:1px solid rgba(29,191,171,.08);padding:2.5r
 </style>
 </head>
 <body>
-
-<!-- EDIT TOOLBAR -->
-<div id="edit-toolbar">
-  <div id="edit-hint">Edit Mode ON — click any highlighted text to edit</div>
-  <div style="display:flex;gap:8px">
-    <button class="edit-btn" id="btn-export" onclick="exportData()">Export Data</button>
-    <button class="edit-btn" id="btn-toggle" onclick="toggleEditMode()">Edit Mode</button>
-  </div>
-</div>
 
 <!-- NAV -->
 <nav id="main-nav">
@@ -972,45 +953,12 @@ function closeMenu(){
 // openMap replaced by direct href link
 
 /* =============================================
-   EDIT MODE
-   ============================================= */
-function toggleEditMode(){
-  const body = document.body;
-  const btn = document.getElementById('btn-toggle');
-  const exportBtn = document.getElementById('btn-export');
-  const hint = document.getElementById('edit-hint');
-  const isActive = body.classList.toggle('edit-mode');
-  btn.classList.toggle('active', isActive);
-  btn.textContent = isActive ? 'Exit Edit Mode' : 'Edit Mode';
-  exportBtn.style.display = isActive ? 'block' : 'none';
-  hint.style.display = isActive ? 'block' : 'none';
-  if(isActive){
-    document.querySelectorAll('[data-edit]').forEach(el=>{
-      el.contentEditable = 'true';
-    });
-  } else {
-    document.querySelectorAll('[data-edit]').forEach(el=>{
-      el.contentEditable = 'false';
-    });
-  }
-}
-function exportData(){
-  const dataStr = `const SITE_DATA = ${JSON.stringify(SITE_DATA, null, 2)};`;
-  navigator.clipboard.writeText(dataStr).then(()=>{
-    const btn = document.getElementById('btn-export');
-    btn.textContent = 'Copied!';
-    setTimeout(()=>btn.textContent='Export Data', 2000);
-  });
-}
-
-/* =============================================
    INIT
    ============================================= */
 document.addEventListener('DOMContentLoaded', function(){
   render();
   updateCountdown();
   setInterval(updateCountdown, 1000);
-  document.getElementById('edit-toolbar').style.display = 'flex';
 
   // Sticky nav shadow on scroll
   window.addEventListener('scroll', function(){
