@@ -20,8 +20,8 @@ const SITE_DATA = {
   },
   nav: {
     brand: "PORTO '26",
-    links: ["About","Categories","Schedule","Sponsors","Venue","FAQ"],
-    cta: "Register Now"
+    links: ["About","Schedule","Sponsors","Venue","FAQ"],
+    cta: "Fully Booked"
   },
   hero: {
     eyebrow: "Blitz Rugby Club Presents",
@@ -30,7 +30,7 @@ const SITE_DATA = {
     subtitle: "National Touch Rugby Tournament",
     date: "12 & 13 September 2026",
     venue: "Arena Sukan Kuala Lumpur",
-    cta1: "Register Your Team",
+    cta1: "✦ Fully Booked",
     cta2: "Become a Sponsor",
     countdownTarget: "2026-09-12T08:00:00"
   },
@@ -118,9 +118,8 @@ const SITE_DATA = {
     { q: "Who can participate in Porto 2026?", a: "Porto 2026 is open to boys and girls teams across all age categories — U8 Mixed, U10 Girls, U12 Girls, U12 Boys, and U16 Girls. Teams from any school, club, or community group across Malaysia are welcome. No previous tournament experience needed!" },
     { q: "What are the team sizes?", a: "Touch rugby is played 6v6. Each team should register a squad of 8–12 players to allow for substitutions." },
     { q: "What is touch rugby? Is it different from regular rugby?", a: "Touch rugby is a non-contact version of rugby where a 'touch' replaces a tackle. It's fast, fun, and perfect for all ages. No tackling, no scrums, no lineouts — just running, passing and teamwork. It's one of the fastest growing sports in Malaysia!" },
-    { q: "How do we register our team?", a: "Registration details and the team entry form will be published here once open. Contact our team directly to reserve your spot early. Places are limited — don't wait! [PLACEHOLDER — Registration link to be added.]" },
-    { q: "What are the registration fees?", a: "[PLACEHOLDER — Registration fees per team/category to be confirmed. Check back soon or contact us for early bird pricing.]" },
-    { q: "Are there accommodation options near the venue?", a: "Arena Sukan KL is centrally located with many hotels nearby. We recommend booking early, especially for teams travelling from outside KL. [PLACEHOLDER — Recommended accommodation list to be added.]" },
+    { q: "How do we register our team?", a: "Registration is now <strong>fully closed</strong> — we're fully booked for Porto '26! All 25 clubs across 7 Malaysian states and Phuket, Thailand have been confirmed. Stay tuned for Porto '27 — follow us on Instagram and Facebook to be the first to know when registration opens." },
+    { q: "Are there accommodation options near the venue?", a: "Yes! We recommend our partner hotel — <strong>Arena Suites Kuala Lumpur</strong>, just steps from Stadium Arena Sukan at 210, Jalan Ayer Jerneh, 53200 KL. Air-conditioned rooms with free WiFi, private bathrooms, 24-hour front desk, daily housekeeping, and room service. Perfect for travelling teams. Spots fill fast — <a href='https://www.agoda.com/hotel-arena-kuala-lumpur/hotel/kuala-lumpur-my.html?site_id=1932645&tag=7337c63e-876b-4039-82f3-ddd8135f0458' target='_blank' rel='noopener' style='color:inherit;text-decoration:underline;font-weight:600'>Book early on Agoda ↗</a>" },
     { q: "How can my company become a sponsor?", a: "We have five tiers — Diamond to Amber — ranging from RM2,500 to RM25,000. Each offers strong brand visibility and community goodwill. Download our sponsorship brief or contact Ameirul at +6 019-241 5387." },
     { q: "Can I volunteer at the tournament?", a: "Yes! We love volunteers. From match officials to event crew, there's a role for everyone. Reach out via the contact section below and join the Porto '26 family." }
   ],
@@ -450,7 +449,7 @@ footer{background:#050505;border-top:1px solid rgba(29,191,171,.08);padding:2.5r
       </div>
     </div>
     <div class="hero-btns">
-      <button class="btn-primary" id="hero-cta1" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})"></button>
+      <div id="hero-cta1" style="display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;background:rgba(29,191,171,.12);border:1px solid rgba(29,191,171,.4);color:#1DBFAB;padding:11px 22px;cursor:default"></div>
       <button class="btn-outline" id="hero-cta2" onclick="document.getElementById('sponsors').scrollIntoView({behavior:'smooth'})"></button>
     </div>
   </div>
@@ -494,14 +493,22 @@ footer{background:#050505;border-top:1px solid rgba(29,191,171,.08);padding:2.5r
   </div>
 </div>
 
-<!-- CATEGORIES -->
-<section style="background:#0D0D0D" id="categories">
-  <div class="container">
-    <p class="sec-label">Who Can Play</p>
-    <h2 class="sec-title">AGE <span class="accent">CATEGORIES</span></h2>
-    <div class="cat-grid" id="cat-grid"></div>
-    <p class="placeholder-note">[PLACEHOLDER — Age eligibility & squad sizes to be confirmed by organiser]</p>
+<!-- REGISTER CTA -->
+<section class="register-cta" id="register">
+  <div class="eyebrow">Registration Closed — We're Fully Booked!</div>
+  <h2>25 CLUBS.<br>ONE TOURNAMENT.</h2>
+  <p style="font-size:17px;color:rgba(0,0,0,.7);max-width:600px;margin:0 auto 1.5rem;line-height:1.7">7 Malaysian states and Phuket, Thailand have answered the call. The field is set for Porto '26.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:2rem;max-width:700px;margin-left:auto;margin-right:auto">
+    <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,0,0,.12);padding:6px 14px">Kuala Lumpur</span>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,0,0,.12);padding:6px 14px">Selangor</span>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,0,0,.12);padding:6px 14px">Negeri Sembilan</span>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,0,0,.12);padding:6px 14px">Perak</span>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,0,0,.12);padding:6px 14px">Terengganu</span>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,0,0,.12);padding:6px 14px">Putrajaya</span>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,0,0,.12);padding:6px 14px">Pahang</span>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,0,0,.2);padding:6px 14px">🇹🇭 Phuket, Thailand</span>
   </div>
+  <div class="btn-dark" style="display:inline-block;cursor:default;opacity:1">✦ Fully Booked — See You On The Field!</div>
 </section>
 
 <!-- SCHEDULE -->
@@ -574,14 +581,6 @@ footer{background:#050505;border-top:1px solid rgba(29,191,171,.08);padding:2.5r
     <h2 class="sec-title" style="text-align:center">FREQUENTLY ASKED <span class="accent">QUESTIONS</span></h2>
     <div class="faq-list" id="faq-list"></div>
   </div>
-</section>
-
-<!-- REGISTER CTA -->
-<section class="register-cta" id="register">
-  <div class="eyebrow">Registration is Open!</div>
-  <h2>REGISTER YOUR<br>TEAM TODAY</h2>
-  <p>Spots are limited — secure your place at Porto 2026 now. Fill in the form and we'll confirm your registration shortly.</p>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLScFDL4smj05qH39SwvpMLKIlHDyiXFrkCg20QeYweyo_YDuGQ/viewform" target="_blank" rel="noopener" class="btn-dark">Register Your Team Here</a>
 </section>
 
 <!-- CONTACT -->
@@ -805,19 +804,7 @@ function render() {
     </div>
   `).join('');
 
-  // Categories
-  document.getElementById('cat-grid').innerHTML = D.categories.map(c=>`
-    <div class="cat-card">
-      <div class="cat-card-header">
-        <div class="cat-age-badge">${c.age}</div>
-        <div class="cat-card-illo">${ILLUSTRATIONS[c.illustrationKey]||''}</div>
-      </div>
-      <div class="cat-name">${c.name}</div>
-      <div class="cat-desc">${c.desc}</div>
-      <div class="cat-born">${c.born}</div>
-      <span class="cat-tag">${c.genderTag}</span>
-    </div>`
-  ).join('');
+  // Categories (section removed from page — skip render)
 
   // Schedule
   document.getElementById('tab-day1').textContent = D.schedule.day1.label;
