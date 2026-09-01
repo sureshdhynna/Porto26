@@ -557,7 +557,7 @@ footer{background:#050505;border-top:1px solid rgba(29,191,171,.08);padding:2.5r
       <div class="venue-visual">
         <div style="width:100%;border:1px solid rgba(29,191,171,0.2);overflow:hidden;border-radius:2px">
           <iframe
-            src="https://maps.google.com/maps?q=Arena+Sukan+Kuala+Lumpur,Kuala+Lumpur,Malaysia&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.8208661652574!2d101.71457742346024!3d3.192959300000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4f4e2b3b3b3b%3A0x1234567890abcdef!2sArena%20Sukan%20Kuala%20Lumpur!5e0!3m2!1sen!2smy!4v1234567890"
             width="100%"
             height="380"
             style="border:0;display:block;filter:grayscale(30%) contrast(1.1)"
@@ -852,8 +852,7 @@ function render() {
   document.getElementById('venue-details').innerHTML = [
     { icon:'M', label:'Address', val:D.venue.name+', '+D.venue.address },
     { icon:'C', label:'Event Hours', val:D.venue.hours },
-    { icon:'F', label:'Facilities', val:D.venue.facilities },
-    { icon:'L', label:'Nearest LRT', val:D.venue.lrt }
+    { icon:'F', label:'Facilities', val:D.venue.facilities }
   ].map(r=>`
     <div class="vd-row">
       <div class="vd-icon">
