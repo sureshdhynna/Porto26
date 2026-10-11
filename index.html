@@ -16,23 +16,23 @@
 const SITE_DATA = {
   meta: {
     title: "Porto 2026 National Touch Rugby Tournament",
-    description: "Malaysia's premier youth touch rugby tournament. 17 & 18 October 2026 at Arena Sukan Kuala Lumpur.",
+    description: "Malaysia's premier youth touch rugby tournament. 19 & 20 December 2026 at Arena Sukan Kuala Lumpur.",
   },
   nav: {
     brand: "PORTO '26",
     links: ["About","Schedule","Sponsors","Venue","FAQ"],
-    cta: "Fully Booked"
+    cta: "Register Now"
   },
   hero: {
     eyebrow: "Blitz Rugby Club Presents",
     title: "PORTO",
     titleAccent: "'26",
     subtitle: "National Touch Rugby Tournament",
-    date: "17 & 18 October 2026",
+    date: "19 & 20 December 2026",
     venue: "Arena Sukan Kuala Lumpur",
-    cta1: "✦ Fully Booked",
+    cta1: "Register Your Team",
     cta2: "Become a Sponsor",
-    countdownTarget: "2026-10-17T08:00:00"
+    countdownTarget: "2026-12-19T08:00:00"
   },
   stats: [
     { num: "2nd",  label: "Edition" },
@@ -53,7 +53,7 @@ const SITE_DATA = {
       { title: "Youth Empowerment", text: "Supporting the next generation of Malaysian athletes through sport, teamwork, and resilience." }
     ],
     eventDetails: {
-      date: "17 & 18 October 2026",
+      date: "19 & 20 December 2026",
       time: "8:00 AM – 5:00 PM",
       venue: "Arena Sukan Kuala Lumpur",
       edition: "2nd Annual",
@@ -70,7 +70,7 @@ const SITE_DATA = {
   ],
   schedule: {
     day1: {
-      label: "Day 1 — 17 October",
+      label: "Day 1 — 19 December",
       items: [
         { time: "8:00 AM",  event: "Registration & Team Check-In", sub: "All teams report to registration desk", badge: "All Teams" },
         { time: "8:30 AM",  event: "Opening Ceremony", sub: "Officiating by YB Hannah Yeoh — official tournament flag-off", badge: "Main Field" },
@@ -81,7 +81,7 @@ const SITE_DATA = {
       ]
     },
     day2: {
-      label: "Day 2 — 18 October",
+      label: "Day 2 — 20 December",
       items: [
         { time: "8:00 AM",  event: "Registration & Warm-Up", sub: "U12 Girls & U12 Boys teams report and warm up", badge: "All Teams" },
         { time: "8:30 AM",  event: "Group Stage — U12 Girls & U12 Boys", sub: "Round-robin pool play begins concurrently across both categories", badge: "Pools" },
@@ -118,7 +118,7 @@ const SITE_DATA = {
     { q: "Who can participate in Porto 2026?", a: "Porto 2026 is open to boys and girls teams across all age categories — U8 Mixed, U10 Girls, U12 Girls, U12 Boys, and U16 Girls. Teams from any school, club, or community group across Malaysia are welcome. No previous tournament experience needed!" },
     { q: "What are the team sizes?", a: "Touch rugby is played 6v6. Each team should register a squad of 8–12 players to allow for substitutions." },
     { q: "What is touch rugby? Is it different from regular rugby?", a: "Touch rugby is a non-contact version of rugby where a 'touch' replaces a tackle. It's fast, fun, and perfect for all ages. No tackling, no scrums, no lineouts — just running, passing and teamwork. It's one of the fastest growing sports in Malaysia!" },
-    { q: "How do we register our team?", a: "Registration is now <strong>fully closed</strong> — we're fully booked for Porto '26! All 25 clubs across 7 Malaysian states and Phuket, Thailand have been confirmed. Stay tuned for Porto '27 — follow us on Instagram and Facebook to be the first to know when registration opens." },
+    { q: "How do we register our team?", a: "Registration for Porto '26 is <strong>open now</strong>! Spots are allocated on a first come, first served basis, so don't wait — fill in the team entry form to secure your place." },
     { q: "Are there accommodation options near the venue?", a: "Yes! We recommend our partner hotel — <strong>Arena Suites Kuala Lumpur</strong>, just steps from Stadium Arena Sukan at 210, Jalan Ayer Jerneh, 53200 KL. Air-conditioned rooms with free WiFi, private bathrooms, 24-hour front desk, daily housekeeping, and room service. Perfect for travelling teams. Spots fill fast — <a href='https://www.agoda.com/hotel-arena-kuala-lumpur/hotel/kuala-lumpur-my.html?site_id=1932645&tag=7337c63e-876b-4039-82f3-ddd8135f0458' target='_blank' rel='noopener' style='color:inherit;text-decoration:underline;font-weight:600'>Book early on Agoda ↗</a>" },
     { q: "How can my company become a sponsor?", a: "We have five tiers — Diamond to Amber — ranging from RM2,500 to RM25,000. Each offers strong brand visibility and community goodwill. Download our sponsorship brief or contact Ameirul at +6 019-241 5387." },
     { q: "Can I volunteer at the tournament?", a: "Yes! We love volunteers. From match officials to event crew, there's a role for everyone. Reach out via the contact section below and join the Porto '26 family." }
@@ -459,7 +459,7 @@ footer{background:#050505;border-top:1px solid rgba(29,191,171,.08);padding:2.5r
       </div>
     </div>
     <div class="hero-btns">
-      <div id="hero-cta1" style="display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;background:rgba(29,191,171,.12);border:1px solid rgba(29,191,171,.4);color:#1DBFAB;padding:11px 22px;cursor:default"></div>
+      <button class="btn-primary" id="hero-cta1" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})"></button>
       <button class="btn-outline" id="hero-cta2" onclick="document.getElementById('sponsors').scrollIntoView({behavior:'smooth'})"></button>
     </div>
   </div>
@@ -505,20 +505,10 @@ footer{background:#050505;border-top:1px solid rgba(29,191,171,.08);padding:2.5r
 
 <!-- REGISTER CTA -->
 <section class="register-cta" id="register">
-  <div class="eyebrow">Registration Closed — We're Fully Booked!</div>
-  <h2>25 CLUBS.<br>ONE TOURNAMENT.</h2>
-  <p style="font-size:17px;color:rgba(0,0,0,.7);max-width:600px;margin:0 auto 1.5rem;line-height:1.7">7 Malaysian states and Phuket, Thailand have answered the call. The field is set for Porto '26.</p>
-  <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:2rem;max-width:700px;margin-left:auto;margin-right:auto">
-    <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,0,0,.12);padding:6px 14px">Kuala Lumpur</span>
-    <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,0,0,.12);padding:6px 14px">Selangor</span>
-    <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,0,0,.12);padding:6px 14px">Negeri Sembilan</span>
-    <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,0,0,.12);padding:6px 14px">Perak</span>
-    <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,0,0,.12);padding:6px 14px">Terengganu</span>
-    <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,0,0,.12);padding:6px 14px">Putrajaya</span>
-    <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,0,0,.12);padding:6px 14px">Pahang</span>
-    <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,0,0,.2);padding:6px 14px">🇹🇭 Phuket, Thailand</span>
-  </div>
-  <div class="btn-dark" style="display:inline-block;cursor:default;opacity:1">✦ Fully Booked — See You On The Field!</div>
+  <div class="eyebrow">Registration is Open!</div>
+  <h2>REGISTER YOUR<br>TEAM TODAY</h2>
+  <p>Spots are limited and filled on a first come, first served basis — secure your place at Porto '26 now. Fill in the form and we'll confirm your registration shortly.</p>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLScFDL4smj05qH39SwvpMLKIlHDyiXFrkCg20QeYweyo_YDuGQ/viewform" target="_blank" rel="noopener" class="btn-dark">Register Your Team Here</a>
 </section>
 
 <!-- SCHEDULE -->
@@ -567,7 +557,7 @@ footer{background:#050505;border-top:1px solid rgba(29,191,171,.08);padding:2.5r
       <div class="venue-visual">
         <div style="width:100%;border:1px solid rgba(29,191,171,0.2);overflow:hidden;border-radius:2px">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.8208661652574!2d101.71457742346024!3d3.192959300000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4f4e2b3b3b3b%3A0x1234567890abcdef!2sArena%20Sukan%20Kuala%20Lumpur!5e0!3m2!1sen!2smy!4v1234567890"
+            src="https://maps.google.com/maps?q=Arena+Sukan+Kuala+Lumpur,Kuala+Lumpur,Malaysia&t=&z=16&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="380"
             style="border:0;display:block;filter:grayscale(30%) contrast(1.1)"
